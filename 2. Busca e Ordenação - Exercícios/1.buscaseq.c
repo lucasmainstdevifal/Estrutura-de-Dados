@@ -1,8 +1,4 @@
 // 1 -  Implemente uma função que simule uma pesquisa sequencial num vetor de números inteiros;
-
-#include <stdio.h>
-
-
 int buscaSequencial(int arr[], int tamanho, int chave) {
     for (int i = 0; i < tamanho; i++) {
         if (arr[i] == chave)
