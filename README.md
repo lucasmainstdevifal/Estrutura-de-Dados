@@ -8,7 +8,8 @@ Activities Data Structure Language C
 1) Instalar no link : https://sourceforge.net/projects/mingw/
 -> Marcar a opção : mingw32-gcc-g++
 -> Ir nas variáveis de ambiente
--> Incluir na variável PATH: C:\MinGW\bin e C:\MinGW\mingw32\bin
+-> Incluir na variável PATH do sistema: C:\MinGW\bin e C:\MinGW\mingw32\bin
+-> Incluir na variável PATH do usuário: C:\MinGW\bin e C:\MinGW\mingw32\bin
 
 2) Instalar Extensões:
 -> C/C++
@@ -23,6 +24,7 @@ Activities Data Structure Language C
 3) Live Share:
 -> Live Share
 
+* As vezes para que o VSCode entenda que foi configurado é necessário reiniciar o computador.
 
 4) Para Debugar vamos na extensão DEBUG padrão do VSCODE e:
 -> Clicamos em "create a launch.json file."
