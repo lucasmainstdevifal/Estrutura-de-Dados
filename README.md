@@ -22,3 +22,9 @@ Activities Data Structure Language C
 
 3) Live Share:
 -> Live Share
+
+
+4) Para Debugar vamos na extensão DEBUG padrão do VSCODE e:
+-> Clicamos em "create a launch.json file."
+-> Clicamos em C++(GDB/LDB)
+-> Clicamos em gcc.exe criar e depurar o arquivo
