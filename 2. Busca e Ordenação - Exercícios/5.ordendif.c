@@ -1,6 +1,3 @@
-// 5 – Implemente um algoritmo diferente de ordenação da questão 3 e faça a mesma comparação
-// entre os métodos.
-
 #include <stdio.h>
 
 // Função para trocar dois elementos de posição
@@ -12,12 +9,12 @@ void trocar(int* a, int* b) {
 
 // Função para encontrar o pivô e particionar o array
 int particionar(int arr[], int inicio, int fim) {
-    int pivô = arr[fim]; // Define o pivô como o último elemento
+    int pivo = arr[fim]; // Define o pivô como o último elemento
     int i = (inicio - 1); // Índice do menor elemento
 
     for (int j = inicio; j <= fim - 1; j++) {
         // Se o elemento atual for menor ou igual ao pivô
-        if (arr[j] <= pivô) {
+        if (arr[j] <= pivo) {
             i++; // Incrementa o índice do menor elemento
             trocar(&arr[i], &arr[j]); // Troca arr[i] e arr[j]
         }
@@ -30,11 +27,11 @@ int particionar(int arr[], int inicio, int fim) {
 void quicksort(int arr[], int inicio, int fim) {
     if (inicio < fim) {
         // Encontra a posição do pivô
-        int pivô = particionar(arr, inicio, fim);
+        int pivo = particionar(arr, inicio, fim);
 
         // Ordena os elementos antes e depois do pivô recursivamente
-        quicksort(arr, inicio, pivô - 1);
-        quicksort(arr, pivô + 1, fim);
+        quicksort(arr, inicio, pivo - 1);
+        quicksort(arr, pivo + 1, fim);
     }
 }
 
