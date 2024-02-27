@@ -30,3 +30,6 @@ Activities Data Structure Language C
 -> Clicamos em "create a launch.json file."
 -> Clicamos em C++(GDB/LDB)
 -> Clicamos em gcc.exe criar e depurar o arquivo
+
+
+5) Para compilar arquivos C no visual studio code vamos em terminal e Run Build Task.
