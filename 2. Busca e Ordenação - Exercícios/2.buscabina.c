@@ -27,11 +27,11 @@ int buscaBinaria(int arr[], int inicio, int fim, int chave) {
 int main() {
     int numeros[] = {3, 7, 10, 14, 25};
     int tamanho = sizeof(numeros) / sizeof(numeros[0]);
-    int chave = 10;
+    int chave = 14;
     int resultado = buscaBinaria(numeros, 0, tamanho - 1, chave);
     if (resultado != -1)
-        printf("O elemento %d foi encontrado na posição %d.\n", chave, resultado);
+        printf("O elemento %d foi encontrado na posicao %d.\n", chave, resultado);
     else
-        printf("O elemento %d não foi encontrado no array.\n", chave);
+        printf("O elemento %d nao foi encontrado no array.\n", chave);
     return 0;
 }
