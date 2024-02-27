@@ -88,7 +88,7 @@ Vamos ver um exemplo de implementação da busca binária em C:
 // Função para busca binária
 int buscaBinaria(int arr[], int inicio, int fim, int chave) {
     while (inicio <= fim) {
-        int meio = inicio + (fim - inicio) / 2;
+        int meio = ( inicio + fim )  / 2;
 
         // Se a chave estiver no meio
         if (arr[meio] == chave)
@@ -121,13 +121,142 @@ int main() {
 
 //**************************************************************************************************************************************************************************
 // 3. Ordenação:
+/*
+-> Conceito: 
+    A ordenação é o processo de reorganizar os elementos de uma coleção de dados de acordo 
+    com um critério específico. Os algoritmos de ordenação são amplamente utilizados na 
+    programação para organizar dados de maneira eficiente, facilitando a busca e a 
+    manipulação subsequente desses dados.
+
+    Algoritmos de Ordenação Simples:
+        Vamos começar com alguns dos algoritmos de ordenação mais simples, que são 
+        fáceis de entender e implementar.
+*/
 
 // * BubbleSort
+// O Bubble Sort é um algoritmo de ordenação simples que percorre repetidamente a lista, 
+// comparando elementos adjacentes e trocando-os se estiverem na ordem errada.
+
+// Ele continua passando pela lista até que nenhum swap seja necessário, o que indica que a 
+// lista está ordenada.
+
+// Aqui está um exemplo de implementação do Bubble Sort em C:
+void bubbleSort(int arr[], int tamanho) {
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = 0; j < tamanho - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Troca os elementos arr[j] e arr[j+1]
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
 
 // * QuickSort
+/*
+-> Conceito:
+    O Quicksort é um algoritmo de ordenação eficiente e amplamente utilizado, conhecido por 
+    sua velocidade e eficiência em muitos casos. Ele segue a abordagem de dividir para conquistar,
+    dividindo o array em subarrays menores, ordenando esses subarrays e, em seguida, combinando-os.
 
+-> Funcionamento:
 
+    O Quicksort seleciona um elemento do array como pivô e rearranja os elementos do array de modo que
+    todos os elementos menores que o pivô estejam à esquerda e todos os elementos maiores estejam à 
+    direita. Em seguida, o Quicksort é aplicado recursivamente aos subarrays à esquerda e à direita 
+    do pivô.
+
+    * Exemplo:
+*/
+
+#include <stdio.h>
+
+// Função para trocar dois elementos de posição
+void trocar(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Função para encontrar o pivô e particionar o array
+int particionar(int arr[], int inicio, int fim) {
+    int pivô = arr[fim]; // Define o pivô como o último elemento
+    int i = (inicio - 1); // Índice do menor elemento
+
+    for (int j = inicio; j <= fim - 1; j++) {
+        // Se o elemento atual for menor ou igual ao pivô
+        if (arr[j] <= pivô) {
+            i++; // Incrementa o índice do menor elemento
+            trocar(&arr[i], &arr[j]); // Troca arr[i] e arr[j]
+        }
+    }
+    trocar(&arr[i + 1], &arr[fim]); // Coloca o pivô na posição correta
+    return (i + 1); // Retorna a posição do pivô
+}
+
+// Função Quicksort
+void quicksort(int arr[], int inicio, int fim) {
+    if (inicio < fim) {
+        // Encontra a posição do pivô
+        int pivô = particionar(arr, inicio, fim);
+
+        // Ordena os elementos antes e depois do pivô recursivamente
+        quicksort(arr, inicio, pivô - 1);
+        quicksort(arr, pivô + 1, fim);
+    }
+}
+
+// Função para imprimir o array
+void imprimirArray(int arr[], int tamanho) {
+    for (int i = 0; i < tamanho; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int tamanho = sizeof(arr) / sizeof(arr[0]);
+    printf("Array original:\n");
+    imprimirArray(arr, tamanho);
+    quicksort(arr, 0, tamanho - 1);
+    printf("Array ordenado:\n");
+    imprimirArray(arr, tamanho);
+    return 0;
+}
+
+/*
+-> Explicação:
+
+    * Vamos considerar o array de entrada {10, 7, 8, 9, 1, 5}.
+
+    1) O pivô é escolhido como o último elemento, neste caso, 5.
+    2) O array é particionado em torno do pivô de modo que os elementos menores que 5 estejam
+    à esquerda e os maiores estejam à direita.
+    3) Após a primeira iteração do Quicksort, o array se torna {1, 5, 8, 9, 10, 7}.
+    4) O processo é repetido recursivamente nos subarrays à esquerda e à direita do pivô até 
+    que todo o array esteja ordenado.
+*/
+
+/*
+-> Escolha do Algoritmo:
+
+    A escolha do algoritmo de ordenação depende do tamanho do conjunto de dados, da eficiência 
+desejada e de outros fatores. Para conjuntos de dados pequenos ou quando a simplicidade é mais 
+importante do que a eficiência, os algoritmos simples como Bubble Sort e Insertion Sort podem ser
+adequados. Para conjuntos de dados maiores, algoritmos mais eficientes como Merge Sort, Quick Sort 
+ou até mesmo algoritmos híbridos podem ser mais apropriados.
+
+*/
 //**************************************************************************************************************************************************************************
 // 4. Ordenação Avançada:
-
+// Algoritmo Merge Sort: conceito e implementação em C.
+// Algoritmo Quick Sort: conceito e implementação em C.
+// Comparação de desempenho entre os algoritmos de ordenação.
+//**************************************************************************************************************************************************************************
+// 5. Aplicações de Ordenação:
+//
+// Ordenação de strings.
+// Ordenação de estruturas de dados complexas.
 //**************************************************************************************************************************************************************************
