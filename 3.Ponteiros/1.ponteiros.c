@@ -5,11 +5,11 @@ int main() {
     int i = 10;
     pti = &i;
     
-    printf("Valor de pti %p\n" ,pti);
+    printf("Endereço de pti %p\n" ,pti);
     printf("Valor de pti %d\n" ,*pti);
     *pti = 25;
     
-    printf("Valor de pti %d\n" ,i);
-    printf("Valor endereco de memoria %p\n",pti);
+    printf("Valor de i %d\n" ,i);
+    printf("Valor endereco de memoria de pti %p\n",pti);
     return 0;
 }
