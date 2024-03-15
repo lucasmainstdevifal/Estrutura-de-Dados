@@ -5,11 +5,11 @@ int main() {
     // Usando malloc para alocar espaço para um array de 5 inteiros
     int *ptr = (int *) malloc(5 * sizeof(int));
     if (ptr == NULL) {
-        printf("Erro: Não foi possível alocar memória.\n");
+        printf("Erro: Nao foi possivel alocar memoria.\n");
         return 1;
     }
     else {
-        printf("Espaço alocado para 5 inteiros.\n");
+        printf("Espaco alocado para 5 inteiros.\n");
     }
 
     // Preenchendo o array com valores
@@ -27,11 +27,11 @@ int main() {
     // Usando realloc para aumentar o tamanho do array para 10 inteiros
     ptr = (int *)realloc(ptr, 10 * sizeof(int));
     if (ptr == NULL) {
-        printf("Erro: Não foi possível realocar memória.\n");
+        printf("Erro: Nao foi possivel realocar memoria.\n");
         return 1;
     } 
     else {
-        printf("Espaço realocado para 10 inteiros.\n");
+        printf("Espaco realocado para 10 inteiros.\n");
     }
 
     // Preenchendo os novos elementos do array
