@@ -1,17 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "Ponto.h"
+typedef struct ponto Ponto; 
 
-int main(void) {
-  Ponto *pt, *pt2;
+Ponto* criar(int x, int y);
 
-  pt = criar(5,7);
-  imprimir(pt);
-  liberar(pt);
+void imprimir(Ponto *p);
 
-  pt2 = criar(7,7);
-  modificarX(pt2, 6);
-  liberar(pt2); 
-  
-  return 0;
-}
+void modificarX(Ponto *p, int novox);
+
+void liberar(Ponto *p);
