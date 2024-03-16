@@ -19,7 +19,7 @@ int contarNegativos(int *vetor, int n, int **negativos) {
     // Alocamos dinamicamente memória para o novo vetor de negativos
     *negativos = (int *) malloc(contador * sizeof(int));
     if (*negativos == NULL) {
-        printf("Erro ao alocar memória.\n");
+        printf("Erro ao alocar memoria.\n");
         exit(1);
     }
 
@@ -42,8 +42,8 @@ int main() {
     int *negativos;
     int qtdNegativos = contarNegativos(vetor, tamanho, &negativos);
 
-    printf("Quantidade de números negativos: %d\n", qtdNegativos);
-    printf("Números negativos no vetor: ");
+    printf("Quantidade de numeros negativos: %d\n", qtdNegativos);
+    printf("Numeros negativos no vetor: ");
     for (int i = 0; i < qtdNegativos; i++) {
         printf("%d ", negativos[i]);
     }
