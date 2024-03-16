@@ -1,3 +1,8 @@
+// 2 - Implemente a estrutura Carro com os campos: preço, fabricante e placa.  
+// O programa deverá criar dinamicamente um vetor onde os dados dos n carros serão 
+// guardados. Além de guardar, faça funções para: imprimir e atualizar um determinando 
+// carro do vetor, dada sua placa. 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
