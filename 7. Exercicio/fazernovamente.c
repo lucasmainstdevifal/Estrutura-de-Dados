@@ -13,18 +13,33 @@ typedef struct {
     char placa[10] ;
 } Carro;
 
-Carro criarCarro(int qtdCarros){
-
+Carro * criarVetorQntCarros(int qtdCarros) {
+    Carro *vetorCarros = (Carro *) malloc( qtdCarros * sizeof(Carro));
+    if(vetorCarros == NULL) {
+        printf("Erro ao alocar memória \n");
+        exit(1);
+    }
+    
+    return vetorCarros;
 }
 
 int main(){
-    printf("Seja bem vindo ao registro de carros!");
+    printf("Seja bem vindo ao registro de carros!\n");
     
     int qtdCarros;
     printf("Informe a quantidade de carros desejados para registrar: ");
     scanf("%d", &qtdCarros);
 
-    Carro carro = criarCarro(qtdCarros);
+    Carro * carros = criarVetorQntCarros(qtdCarros);
+    printf("Endereco de memoria alocado para um heap da quantidade informada para armazenar a quantidade de carros: %p" ,carros);
+
+    for(int i=0; i<=qtdCarros; i++) {
+        printf("Digite o preco do carro: ");
+        
+        printf("Digite o fabricante do carro: ");
+
+        printf("Digite a placa do carro: ");
+    }
 
     return 0;
 }
