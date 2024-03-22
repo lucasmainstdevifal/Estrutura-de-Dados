@@ -34,12 +34,31 @@ int main(){
     printf("Endereco de memoria alocado para um heap da quantidade informada para armazenar a quantidade de carros: %p" ,carros);
 
     for(int i=0; i<=qtdCarros; i++) {
-        printf("Digite o preco do carro: ");
-        
-        printf("Digite o fabricante do carro: ");
-
-        printf("Digite a placa do carro: ");
+        printf("\nCarro %d:\n", i + 1);
+        printf("Digite o preco: ");
+        scanf("%f", &carros[i].preco);
+        printf("Digite o fabricante: ");
+        scanf("%s", carros[i].fabricante);
+        printf("Digite a placa: ");
+        scanf("%s", carros[i].placa);
     }
+
+    // Imprimindo informações sobre um carro dado sua placa
+    char placaBusca[10];
+    printf("\nDigite a placa do carro que deseja imprimir: ");
+    scanf("%s", placaBusca);
+    ImprimirCarro(carros, qtdCarros, placaBusca);
+
+    // Atualizando o preço de um carro dado sua placa
+    float novoPreco;
+    printf("\nDigite a placa do carro que deseja atualizar o preco: ");
+    scanf("%s", placaBusca);
+    printf("Digite o novo preco: ");
+    scanf("%f", &novoPreco);
+    AtualizarCarro(carros, qtdCarros, placaBusca, novoPreco);
+
+    // Liberando a memória alocada dinamicamente
+    free(carros);
 
     return 0;
 }
